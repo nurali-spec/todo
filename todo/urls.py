@@ -17,6 +17,8 @@ from os import stat
 from django.contrib import admin
 from django.urls import path
 from main.views import homepage
+
+from main.views import test
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -24,5 +26,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homepage, name="homepage"),
+    path('test/', test, name="test"),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

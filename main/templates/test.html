@@ -15,9 +15,12 @@
 <body>
     <section>
         <div class="create_container">
-            <input class="create_input" type="text" placeholder="Напишите сюда новую задачу">
+            <form action="{% url 'add-todo' %}" method="POST">
+                {% csrf_token %}
+                <input class="create_input" type="text" name="todo-text" placeholder="Напишите сюда новую задачу">
 
-            <button class="create_button">ДОбавить</button>
+                <button class="create_button">ДОбавить</button>
+            </form>
         </div>
 
         <div class="todo_container">

@@ -19,7 +19,7 @@
                 {% csrf_token %}
                 <input class="create_input" type="text" name="todo-text" placeholder="Напишите сюда новую задачу">
 
-                <button class="create_button">ДОбавить</button>
+                <button class="create_button">Добавить</button>
             </form>
         </div>
 
@@ -37,7 +37,7 @@
                     <p>{{ todo.created_at}}</p>
                     <div class="action_buttons">
                         <img src="{%static './icons/16666.png'%}">
-                        <img src="{%static './icons/fill-icon-28.jpg'%}" />
+                        <a href="{% url 'delete-todo' todo.id %}"><img src="{%static './icons/fill-icon-28.jpg'%}" /></a>
 
                     </div>
                 </div>
